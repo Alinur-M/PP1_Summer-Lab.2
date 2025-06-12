@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+// Объяснение: Программа выводит элементы главной (где индексы равны) 
+// и побочной (где сумма индексов равна size-1) диагоналей квадратной матрицы 4x4.
+int main() {
+    const int size = 4;   // Размер квадратной матрицы
+    int matrix[size][size];
+    cout << "Введите матрицу (4x4):\n";
+    for(int i = 0; i < size; i++) {
+        for(int j = 0; j < size; j++) {
+            cin >> matrix[i][j];  // Ввод элементов матрицы
+        }
+    }
+    cout << "Главная диагональ: ";
+    for(int i = 0; i < size; i++) {
+        // Элементы главной диагонали (i == j)
+        cout << matrix[i][i] << " ";  
+    }
+    cout << "\nПобочная диагональ: ";
+    for(int i = 0; i < size; i++) {
+        // Элементы побочной диагонали (i + j == size-1)
+        cout << matrix[i][size-1-i] << " ";  
+    } 
+    return 0;
+}
